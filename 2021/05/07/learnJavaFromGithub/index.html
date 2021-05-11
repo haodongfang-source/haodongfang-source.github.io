@@ -468,12 +468,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="自动装箱与拆箱"><a href="#自动装箱与拆箱" class="headerlink" title="自动装箱与拆箱"></a>自动装箱与拆箱</h1><ul>
+                <h3 id="自动装箱与拆箱"><a href="#自动装箱与拆箱" class="headerlink" title="自动装箱与拆箱"></a>自动装箱与拆箱</h3><ul>
 <li>装箱：将基本类型用它们对应的引用类型包装起来</li>
 <li>拆箱：-将包装类型转换为基本数据类型  </li>
 </ul>
 <p>一个Java源码只能定义一个<code>public</code>类型的class，并且class名称和文件名称必需完全一致。<br>Java11新增直接运行一个单文件源码：java hello.java</p>
-<h1 id="ch02-Java程序基础"><a href="#ch02-Java程序基础" class="headerlink" title="ch02 Java程序基础"></a>ch02 Java程序基础</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i3 = <span class="number">2_000_000_000</span>; <span class="comment">// 加下划线更容易识别   </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="ch02-Java程序基础"><a href="#ch02-Java程序基础" class="headerlink" title="ch02 Java程序基础"></a>ch02 Java程序基础</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i3 = <span class="number">2_000_000_000</span>; <span class="comment">// 加下划线更容易识别   </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。<br>类名使用<em>UpperCamelCase</em>风格<br>方法名、参数、成员变量名、局部变量名一律使用__<em>lower CamelCase</em>风格。  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 可以用来自动创建文档的注释</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 向屏幕输出文本:</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, world!&quot;</span>) ;</span><br><span class="line">        <span class="comment">/* 多行注释开始</span></span><br><span class="line"><span class="comment">        注释内容</span></span><br><span class="line"><span class="comment">        注释结束 */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="comment">// class定义结束  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 可以用来自动创建文档的注释，写在class和method的定义处</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@auther</span> liaoxuefeng</span></span><br><span class="line"><span class="comment"> */</span>   </span><br></pre></td></tr></table></figure>
@@ -483,7 +483,7 @@
 <p>变量类型太长可以用var关键字：   </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"><span class="keyword">var</span> sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">浮点数无法精确表示</span><br><span class="line">`<span class="keyword">double</span> y = <span class="number">1</span> - <span class="number">9.0</span> / <span class="number">10</span>;`</span><br><span class="line">y=<span class="number">0.09999999999999998</span> ，即<span class="number">0.1</span>的近似值  </span><br><span class="line">浮点数比较大小：比较差的绝对值是否小于一个很小的数  </span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line"><span class="comment">// 比较x和y是否相等，先计算其差的绝对值:</span></span><br><span class="line"><span class="keyword">double</span> r = Math.abs(x - y);</span><br><span class="line"><span class="comment">// 再判断绝对值是否足够小:</span></span><br><span class="line"><span class="keyword">if</span> (r &lt; <span class="number">0.00001</span>) &#123;</span><br><span class="line">    <span class="comment">// 可以认为相等</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不相等</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h1><ol>
+<h3 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h3><ol>
 <li>用 <code>+</code> 连接  </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">&quot;first line \n&quot;</span></span><br><span class="line">         + <span class="string">&quot;second line \n&quot;</span></span><br><span class="line">         + <span class="string">&quot;end&quot;</span>;</span><br></pre></td></tr></table></figure>
@@ -492,7 +492,7 @@
 <li>用 <code>&quot;&quot;&quot;...&quot;&quot;&quot;</code> 连接（java13） </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">                   SELECT * FROM</span></span><br><span class="line"><span class="string">                     users</span></span><br><span class="line"><span class="string">                   WHERE id &gt; 100</span></span><br><span class="line"><span class="string">                   ORDER BY name DESC</span></span><br><span class="line"><span class="string">                   &quot;</span><span class="string">&quot;&quot;</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h1><p><code>int arr[] = new arr[] &#123;1_000,2_000_000&#125;</code><br>简写为<code>int arr = &#123;0,0,0&#125;</code></p>
+<h3 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h3><p><code>int arr[] = new arr[] &#123;1_000,2_000_000&#125;</code><br>简写为<code>int arr = &#123;0,0,0&#125;</code></p>
 <p>要判断引用类型的变量内容是否相等，必须使用equals()方法：  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s1 = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">        String s2 = <span class="string">&quot;HELLO&quot;</span>.toLowerCase();</span><br><span class="line">        System.out.println(s1);</span><br><span class="line">        System.out.println(s2);</span><br><span class="line">        <span class="keyword">if</span> (s1.equals(s2)) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;s1 equals s2&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;s1 not equals s2&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -522,7 +522,7 @@ public class Main &#123;
     &#125;
 &#125;
 </code></pre>
-<h1 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h1><ul>
+<h3 id="面向对象基础"><a href="#面向对象基础" class="headerlink" title="面向对象基础"></a>面向对象基础</h3><ul>
 <li>class</li>
 </ul>
 <pre><code class="java">psvm&#123;
@@ -556,7 +556,7 @@ class Person &#123;
 <li>String 不可变</li>
 <li>数组，引用内容可变</li>
 </ol>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>参数绑定：<br>调用方把参数传递给实例方法时，调用时传递的值会按参数位置一一绑定。<br>基本数据类型参数绑定是调用方值的复制。<br>引用类型参数的传递，调用方的变量，和接收方的参数变量，指向的是同一个对象。</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>参数绑定：<br>调用方把参数传递给实例方法时，调用时传递的值会按参数位置一一绑定。<br>基本数据类型参数绑定是调用方值的复制。<br>引用类型参数的传递，调用方的变量，和接收方的参数变量，指向的是同一个对象。</p>
 <ul>
 <li>构造方法  </li>
 </ul>
@@ -596,7 +596,7 @@ public void setName(String firstName,String lastName)&#123;
     this.name=lastName;
     &#125;
 </code></pre>
-<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>子类获得父类的所有字段，严禁定义与父类同名的字段<br>由于<code>private</code>修饰的字段无法被子类访问，削弱了继承的作用，用<code>protected</code>修饰的字段可以被子类访问<br>子类引用父类的字段用<code>super.filedName</code><br><em>类似无参构造，java中任何<code>class</code>的构造方法，第一行语句必须是调用父类的构造方法，编译器会自动添加<code>super();</code>调用</em><br>如果父类没有默认的构造方法，子类就必须显式调用super()并给出参数以便让编译器定位到父类的一个合适的构造方法。</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>子类获得父类的所有字段，严禁定义与父类同名的字段<br>由于<code>private</code>修饰的字段无法被子类访问，削弱了继承的作用，用<code>protected</code>修饰的字段可以被子类访问<br>子类引用父类的字段用<code>super.filedName</code><br><em>类似无参构造，java中任何<code>class</code>的构造方法，第一行语句必须是调用父类的构造方法，编译器会自动添加<code>super();</code>调用</em><br>如果父类没有默认的构造方法，子类就必须显式调用super()并给出参数以便让编译器定位到父类的一个合适的构造方法。</p>
 <ul>
 <li>向上转型</li>
 </ul>
@@ -608,7 +608,7 @@ Object o2 = s; // upcasting, ok
 </code></pre>
 <p>注：<code>Student</code>继承自<code>Person</code>  </p>
 <p><strong>向上转型有什么用处？=&gt;多态</strong></p>
-<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><p>多态：针对某个类型的方法调用，其真正执行的方法取决于运行时期实际类型的方法<br>多态的特性：运行期才能动态决定调用的子类方法  </p>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>多态：针对某个类型的方法调用，其真正执行的方法取决于运行时期实际类型的方法<br>多态的特性：运行期才能动态决定调用的子类方法  </p>
 <p>在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写(Override)  </p>
 <pre><code class="java">public class Main &#123;
     public static void main(String[] args) &#123;
@@ -625,13 +625,13 @@ public class Student extends Person &#123;
 &#125;
 </code></pre>
 <p>加上@override让编译器帮助检查<br>用<code>final </code>修饰的方法不允许被覆写(<code>Override</code>)、<code>extends</code>  </p>
-<h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><p>如果父类的方法本身不需要实现任何功能，仅仅是为了定义方法签名，目的是让子类去覆写它，那么把父类的方法声明为抽象方法<br>抽象方法的本质是定义接口规范：规定高层类的接口  </p>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>如果父类的方法本身不需要实现任何功能，仅仅是为了定义方法签名，目的是让子类去覆写它，那么把父类的方法声明为抽象方法<br>抽象方法的本质是定义接口规范：规定高层类的接口  </p>
 <pre><code class="java">abstract class Person &#123;
     public abstract void run();
 &#125;
 </code></pre>
 <p>使用abstract 修饰，无法执行抽象方法的类称为抽象类，抽象类无法实例化。</p>
-<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><p>所谓<code>interface</code>就是比抽象类还要抽象的纯抽象接口，接口定义的所有方法默认<code>public abstract</code><br>接口不能有实例字段，但可以有用<code>final</code>修饰的静态字段<br>简写：  </p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>所谓<code>interface</code>就是比抽象类还要抽象的纯抽象接口，接口定义的所有方法默认<code>public abstract</code><br>接口不能有实例字段，但可以有用<code>final</code>修饰的静态字段<br>简写：  </p>
 <pre><code class="java">public interface Person &#123;
     // 编译器会自动加上public statc final:
     int MALE = 1;
@@ -639,15 +639,15 @@ public class Student extends Person &#123;
 &#125;
 </code></pre>
 <p>在接口中可以定义<code>default</code>方法   </p>
-<h1 id="静态字段和静态方法"><a href="#静态字段和静态方法" class="headerlink" title="静态字段和静态方法"></a>静态字段和静态方法</h1><p>在一个<code>class</code>中定义的字段称为实例字段。实例字段特点：每个实例有独立的字段，各个实例的同名字段互不影响。<br><code>static filed</code> 静态字段，只有一个共享空间，所有实例共享该空间。<br><code>类名.静态字段</code>访问静态对象<br>调用实例方法需要实例变量，而调用静态方法通过类名就可以调用，类似其他语言的函数。<br>静态方法常用于工具类：  </p>
+<h3 id="静态字段和静态方法"><a href="#静态字段和静态方法" class="headerlink" title="静态字段和静态方法"></a>静态字段和静态方法</h3><p>在一个<code>class</code>中定义的字段称为实例字段。实例字段特点：每个实例有独立的字段，各个实例的同名字段互不影响。<br><code>static filed</code> 静态字段，只有一个共享空间，所有实例共享该空间。<br><code>类名.静态字段</code>访问静态对象<br>调用实例方法需要实例变量，而调用静态方法通过类名就可以调用，类似其他语言的函数。<br>静态方法常用于工具类：  </p>
 <ul>
 <li>Math.random()</li>
 <li>Arrays.sort()  </li>
 </ul>
 <p>静态方法也常用于辅助方法：main()  </p>
-<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><p>用来解决命名冲突，一个类总属于一个包<br>包作用域：不用<code>public、protected、private</code>修饰的字段和方法就是包作用域<br>位于同一个包的类，可以访问包作用域的字段和方法  </p>
-<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><p>嵌套类拥有访问<code>private</code>权限<br>定义为<code>protected</code>的字段和方法可以被子类访问，以及子类的子类<br>一个[.java]文件只能包含一个public类，但可以包含多个非public类。如果有public类，文件名必须和public类的名字相同。</p>
-<h1 id="内部类-inner-class"><a href="#内部类-inner-class" class="headerlink" title="内部类(inner class)"></a>内部类(inner class)</h1><p>定义方法：</p>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>用来解决命名冲突，一个类总属于一个包<br>包作用域：不用<code>public、protected、private</code>修饰的字段和方法就是包作用域<br>位于同一个包的类，可以访问包作用域的字段和方法  </p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>嵌套类拥有访问<code>private</code>权限<br>定义为<code>protected</code>的字段和方法可以被子类访问，以及子类的子类<br>一个[.java]文件只能包含一个public类，但可以包含多个非public类。如果有public类，文件名必须和public类的名字相同。</p>
+<h3 id="内部类-inner-class"><a href="#内部类-inner-class" class="headerlink" title="内部类(inner class)"></a>内部类(inner class)</h3><p>定义方法：</p>
 <ol>
 <li><p>outer class 中明确指定  </p>
 </li>
@@ -656,7 +656,7 @@ public class Student extends Person &#123;
 <li><p>静态内部类  </p>
 </li>
 </ol>
-<h1 id="classpath和jar"><a href="#classpath和jar" class="headerlink" title="classpath和jar"></a>classpath和jar</h1><p>classpath:指示JVM如何搜索class<br>jar:把目录打包</p>
+<h3 id="classpath和jar"><a href="#classpath和jar" class="headerlink" title="classpath和jar"></a>classpath和jar</h3><p>classpath:指示JVM如何搜索class<br>jar:把目录打包</p>
 
                 
             </div>
